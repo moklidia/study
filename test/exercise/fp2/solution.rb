@@ -6,6 +6,12 @@ module Exercise
 
       # Написать свою функцию my_each
       def my_each
+        i= 0
+        while i < count
+          yield(self[i])
+          i += 1
+        end
+        self
       end
 
       # Написать свою функцию my_map
