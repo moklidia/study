@@ -16,12 +16,14 @@ module Exercise
 
       # Написать свою функцию my_map
       def my_map
-        result = []
+        result = MyArray.new
         my_each{ |el| result << yield(el) }     
       end
 
       # Написать свою функцию my_compact
       def my_compact
+        result = MyArray.new
+        my_each { |el| result << el if !el.nil? }
       end
 
       # Написать свою функцию my_reduce
