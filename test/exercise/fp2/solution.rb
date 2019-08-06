@@ -29,9 +29,10 @@ module Exercise
       end
 
       # Написать свою функцию my_reduce
-      def my_reduce(acc = 0)
-        acc += 1 if yield(3, 2) == 3 * 2 && acc == 0
-        my_each { |el| acc = yield(acc, el) }
+      def my_reduce(initial = nil)
+        acc = initial.nil? ? self[0] : initial
+        tail = initial.nil? ? self[1..(length - 1)] : self
+        tail.my_each { |el| acc = yield(acc, el) }
         acc
       end
     end
