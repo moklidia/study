@@ -24,7 +24,7 @@ module Exercise
       # Написать свою функцию my_compact
       def my_compact
         result = MyArray.new([])
-        my_each { |el| result << el unless el.nil? }
+        my_each { |el| result << el if !el.nil? }
         result
       end
 
